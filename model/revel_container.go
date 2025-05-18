@@ -114,8 +114,8 @@ func (w *WrappedRevelCallback) PackageResolver(pkgName string) error {
 
 // RevelImportPath Revel framework import path.
 var (
-	RevelImportPath        = "github.com/revel/revel"
-	RevelModulesImportPath = "github.com/revel/modules"
+	RevelImportPath        = "github.com/Laur1nMartins/revel"
+	RevelModulesImportPath = "github.com/Laur1nMartins/revel-modules"
 )
 
 // This function returns a container object describing the revel application
