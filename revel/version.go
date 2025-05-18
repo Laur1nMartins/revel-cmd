@@ -103,11 +103,11 @@ func (v *VersionCommand) doRepoCheck(updateLibs bool) (versionInfo string, needs
 		}
 		switch repo {
 		case "revel":
-			title, repo, localVersion = "Revel Framework", "github.com/revel/revel", v.revelVersion
+			title, repo, localVersion = "Revel Framework", "github.com/Laur1nMartins/revel", v.revelVersion
 		case "cmd":
 			title, repo, localVersion = "Revel Cmd", "github.com/Laur1nMartins/revel-cmd/revel", v.cmdVersion
 		case "modules":
-			title, repo, localVersion = "Revel Modules", "github.com/revel/modules", v.modulesVersion
+			title, repo, localVersion = "Revel Modules", "github.com/Laur1nMartins/revel-modules", v.modulesVersion
 		}
 
 		// Only do an update on the first loop, and if specified to update
@@ -139,7 +139,7 @@ func (v *VersionCommand) versionFromRepo(repoName, branchName, fileName string) 
 	}
 	// Try to download the version of file from the repo, just use an http connection to retrieve the source
 	// Assuming that the repo is github
-	fullurl := "https://raw.githubusercontent.com/revel/" + repoName + "/" + branchName + "/" + fileName
+	fullurl := "https://raw.githubusercontent.com/Laur1nMartins/" + repoName + "/" + branchName + "/" + fileName
 	resp, err := http.Get(fullurl)
 	if err != nil {
 		return
