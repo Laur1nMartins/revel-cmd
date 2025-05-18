@@ -10,17 +10,18 @@ require (
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/mattn/go-colorable v0.1.14
 	github.com/pkg/errors v0.9.1
-	github.com/revel/cmd v1.1.2
 	github.com/revel/config v1.1.0
 	github.com/revel/log15 v2.11.20+incompatible
-	github.com/revel/revel v1.1.0
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/tools v0.33.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gopkg.in/stack.v0 v0.0.0-20141108040640-9b43fcefddd0
 )
 
+require github.com/revel/revel v1.1.0 // indirect
+
 require (
+	github.com/Laur1nMartins/revel v1.2.0
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-stack/stack v1.8.1 // indirect
 	github.com/google/uuid v1.6.0 // indirect
@@ -35,3 +36,5 @@ require (
 	golang.org/x/sys v0.33.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+retract v1.2.0
