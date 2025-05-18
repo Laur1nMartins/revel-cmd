@@ -487,7 +487,7 @@ import (
 	"reflect"
 	"github.com/Laur1nMartins/revel"{{range $k, $v := $.ImportPaths}}
 	{{$v}} "{{$k}}"{{end}}
-	"github.com/revel/revel/testing"
+	"github.com/Laur1nMartins/revel/testing"
 )
 
 var (
