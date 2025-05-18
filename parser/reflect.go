@@ -17,8 +17,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/revel/cmd/model"
-	"github.com/revel/cmd/utils"
+	"github.com/Laur1nMartins/revel-cmd/model"
+	"github.com/Laur1nMartins/revel-cmd/utils"
 )
 
 // A container used to support the reflection package.

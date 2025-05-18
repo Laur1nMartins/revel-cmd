@@ -5,10 +5,10 @@
 // Package harness for a Revel Framework.
 //
 // It has a following responsibilities:
-// 1. Parse the user program, generating a main.go file that registers
-//    controller classes and starts the user's server.
-// 2. Build and run the user program.  Show compile errors.
-// 3. Monitor the user source and re-build / restart the program when necessary.
+//  1. Parse the user program, generating a main.go file that registers
+//     controller classes and starts the user's server.
+//  2. Build and run the user program.  Show compile errors.
+//  3. Monitor the user source and re-build / restart the program when necessary.
 //
 // Source files are generated in the app/tmp directory.
 package harness
@@ -21,7 +21,6 @@ import (
 	"go/build"
 	"html/template"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -34,9 +33,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/revel/cmd/model"
-	"github.com/revel/cmd/utils"
-	"github.com/revel/cmd/watcher"
+	model "github.com/Laur1nMartins/revel-cmd/model"
+	utils "github.com/Laur1nMartins/revel-cmd/utils"
+	watcher "github.com/Laur1nMartins/revel-cmd/watcher"
 )
 
 var (
@@ -80,7 +79,7 @@ func (h *Harness) renderError(iw http.ResponseWriter, ir *http.Request, err erro
 			path = filepath.Join(h.paths.RevelPath, "templates", "errors", view)
 		}
 
-		data, err := ioutil.ReadFile(path)
+		data, err := os.ReadFile(path)
 		if err != nil {
 			utils.Logger.Error("Unable to read template file", path)
 		}

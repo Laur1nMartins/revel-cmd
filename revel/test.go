@@ -15,10 +15,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/revel/cmd/harness"
-	"github.com/revel/cmd/model"
-	"github.com/revel/cmd/tests"
-	"github.com/revel/cmd/utils"
+	"github.com/Laur1nMartins/revel-cmd/harness"
+	"github.com/Laur1nMartins/revel-cmd/model"
+	"github.com/Laur1nMartins/revel-cmd/tests"
+	"github.com/Laur1nMartins/revel-cmd/utils"
 )
 
 var cmdTest = &Command{

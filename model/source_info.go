@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/revel/cmd/utils"
+	utils "github.com/Laur1nMartins/revel-cmd/utils"
 )
 
 type SourceInfo struct {

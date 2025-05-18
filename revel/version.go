@@ -14,16 +14,16 @@ import (
 	"go/ast"
 	"go/parser"
 	"go/token"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
 
+	"github.com/Laur1nMartins/revel-cmd/model"
+	"github.com/Laur1nMartins/revel-cmd/utils"
 	"github.com/revel/cmd"
-	"github.com/revel/cmd/model"
-	"github.com/revel/cmd/utils"
 )
 
 type (
@@ -105,7 +105,7 @@ func (v *VersionCommand) doRepoCheck(updateLibs bool) (versionInfo string, needs
 		case "revel":
 			title, repo, localVersion = "Revel Framework", "github.com/revel/revel", v.revelVersion
 		case "cmd":
-			title, repo, localVersion = "Revel Cmd", "github.com/revel/cmd/revel", v.cmdVersion
+			title, repo, localVersion = "Revel Cmd", "github.com/Laur1nMartins/revel-cmd/revel", v.cmdVersion
 		case "modules":
 			title, repo, localVersion = "Revel Modules", "github.com/revel/modules", v.modulesVersion
 		}
@@ -145,7 +145,7 @@ func (v *VersionCommand) versionFromRepo(repoName, branchName, fileName string) 
 		return
 	}
 	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return
 	}
@@ -157,7 +157,7 @@ func (v *VersionCommand) versionFromRepo(repoName, branchName, fileName string) 
 func (v *VersionCommand) versionFromFilepath(sourcePath string) (version *model.Version, err error) {
 	utils.Logger.Info("Fullpath to revel", "dir", sourcePath)
 
-	sourceStream, err := ioutil.ReadFile(filepath.Join(sourcePath, "version.go"))
+	sourceStream, err := os.ReadFile(filepath.Join(sourcePath, "version.go"))
 	if err != nil {
 		return
 	}
